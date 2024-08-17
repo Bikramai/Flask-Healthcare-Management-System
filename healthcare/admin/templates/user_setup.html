@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare - User Setup</title>
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/admin-panel.css">
+
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <style>
+        th td {
+            border-left: 1px dotted black; /* custom dotted border-bottom */
+            padding: 8px;
+        }
+    </style>
+
+</head>
+<body class="cyan">
+
+<!-- Header -->
+<div class="header-bg">
+    <nav class="container header d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+            <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+        </div>
+        <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5">
+                <a href="{{ url_for('enquiry_requests') }}" class="text-decoration-none">
+                    <i class="bi bi-envelope"></i> Enquiry Requests
+                    {% if new_enquiries_exist %}
+                        <span class="badge bg-danger">New</span>
+                    {% endif %}
+                </a>
+            </li>
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('user_setup') }}" class="text-decoration-none"><i
+                    class="bi bi-gear"></i> User Setup</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('app_details') }}" class="text-decoration-none"><i
+                    class="bi bi-phone"></i> App Details</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('clients') }}" class="text-decoration-none"><i
+                    class="bi bi-person"></i> Clients</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('payment') }}" class="text-decoration-none"><i
+                    class="bi bi-cash"></i> Payments</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('admin_panel') }}"
+                                               class="text-decoration-none"><i class="bi bi-speedometer2"></i>
+                Admin Panel</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none"><i
+                    class="bi bi-box-arrow-in-right"></i>
+                Logout</a>
+            </li>
+        </ul>
+        <!-- mobile hamburger menu -->
+        <div class="mobile">
+            <i id="bar" class="bi bi-list-ul"></i>
+        </div>
+    </nav>
+</div>
+
+
+<section class="container">
+    <p class="fs-2 fw-bold p-color">User Setup <img class="pb-1"
+                                                    src="../../static/img/Admin%20Panel%20images/dashboard.png" alt="">
+    </p>
+    <div class="col-12">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    </div>
+
+    <!-- HTML Code -->
+
+</section>
+
+<section>
+    <div class="d-flex justify-content-center mt-2 p-5">
+        <div class="bg-white p-5 gap-5 width6">
+            <form method="POST" action="{{ url_for('user_setup') }}">
+                <div class="form-group">
+                    <label for="fullname" class="p-color fw-semibold">Full Name</label>
+                    <select class="form-select rounded-3 border-2 bg-transparent py-1 px-2" id="fullname"
+                            name="fullname" required>
+                        <option selected>Please select the client from enquiries</option>
+                        {% for enquiry in enquiries %}
+                            <option value="{{ enquiry.fullname }}" data-email="{{ enquiry.business_email }}"
+                                    data-phone="{{ enquiry.phone }}">
+                                {{ enquiry.fullname }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="p-color fw-semibold">Username</label>
+                    <input type="text" class="form-control rounded-3 border-2 bg-transparent py-1 px-2" id="username"
+                           name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="p-color fw-semibold">Password</label>
+                    <input type="password" class="form-control rounded-3 border-2 bg-transparent py-1 px-2"
+                           id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="p-color fw-semibold">Email</label>
+                    <input type="email" class="form-control rounded-3 border-2 bg-transparent py-1 px-2" id="email"
+                           name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="p-color fw-semibold">Phone Number</label>
+                    <input type="tel" class="form-control rounded-3 border-2 bg-transparent py-1 px-2" id="phone"
+                           name="phone" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 rounded-3 text-light border-0 py-2 mt-3"><img
+                        src="../../static/img/Admin%20Panel%20images/Vector.png" alt=""> Create Account
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <div class="col-12 col-md-4 d-flex bg-secondary-subtle rounded-3 fit-content">
+            <input id="search" class="px-4 py-2 fw-semibold bg-secondary-subtle col-6 border-0 rounded-3"
+                   placeholder="Search" type="search">
+            <button id="active" class="px-4 py-2 fw-semibold col-6 border-0 rounded-3">Active Users</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered border-dark table-white align-middle">
+                <thead>
+                <tr>
+                    <td class="col-2 text-center fs-5 fw-semibold">Full Name</td>
+                    <td class="col-2 text-center fs-5 fw-semibold">Username</td>
+                    <td class="col-2 text-center fs-5 fw-semibold">Email</td>
+                    <td class="col-2 text-center fs-5 fw-semibold">Phone</td>
+                </tr>
+                </thead>
+                <tbody id="clientTableBody">
+                {% for client in clients %}
+                    <tr>
+                        <td class="col-2 text-center p-2 fs-5">{{ client.user.fullname }}</td>
+                        <td class="col-2 text-center p-2 fs-5">{{ client.user.username }}</td>
+                        <td class="col-2 text-center p-2 fs-5">{{ client.user.email }}</td>
+                        <td class="col-2 text-center p-2 fs-5">{{ client.user.phone }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../../static/js/admin-panel.js"></script>
+<script src="static/js/navigation.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function checkForNewEnquiries() {
+            $.ajax({
+                url: '{{ url_for("check_new_enquiries") }}',  // Flask route that returns new enquiries status
+                type: 'GET',
+                success: function (response) {
+                    if (response.new_enquiries_exist) {
+                        $('#new-enquiry-notification').addClass('badge bg-danger').text('New');
+                    } else {
+                        $('#new-enquiry-notification').removeClass('badge bg-danger').text('');
+                    }
+                }
+            });
+        }
+
+        // Check for new enquiries every 30 seconds
+        setInterval(checkForNewEnquiries, 30000);
+    });
+</script>
+<script>
+    document.getElementById('search').addEventListener('input', function () {
+        const searchValue = this.value.trim().toLowerCase();
+        const rows = document.querySelectorAll('#clientTableBody tr');
+
+        rows.forEach(row => {
+            const fullName = row.querySelector('.col-2.text-center.p-2.fs-5').textContent.trim().toLowerCase();
+            if (fullName.includes(searchValue)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const fullnameSelect = document.getElementById('fullname');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+
+    fullnameSelect.addEventListener('change', function () {
+        const selectedOption = fullnameSelect.options[fullnameSelect.selectedIndex];
+        const email = selectedOption.getAttribute('data-email');
+        const phone = selectedOption.getAttribute('data-phone');
+
+        if (email && phone) {
+            emailInput.value = email;
+            phoneInput.value = phone;
+        }
+    });
+});
+</script>
+</body>
+</html>

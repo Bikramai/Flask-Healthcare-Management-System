@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app-bg{
+    background-color: #DDFDFF;
+}
+.bg{
+    background-color:  #11C7CC;
+    
+}
+.width1{
+    width: 435px;
+}
+.button{
+    width: 167px;
+    height: 60px;
+    color: #11C7CC;
+    border: 1px solid rgba(28, 18, 67, 0.24);
+}
+.text-color
+{
+    color: rgba(28, 18, 67, 1);
+
+}

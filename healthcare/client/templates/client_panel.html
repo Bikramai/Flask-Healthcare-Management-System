@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare - Client Panel</title>
+    <link rel="stylesheet" href="../../static/css/login%20landing%20page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+
+<body class="cyan">
+
+<!-- header -->
+<div class="header-bg">
+    <nav class="container header d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+            <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+        </div>
+        <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('client_chat', admin_id=admin.id) }}"
+                                               class="text-decoration-none"><i
+                    class="bi bi-envelope"></i> Chat</a></li>
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('client_panel') }}" class="text-decoration-none"><i
+                    class="bi-person-circle"></i> Client Panel</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none"><i
+                    class="bi bi-box-arrow-in-right"></i> Logout</a></li>
+        </ul>
+        <!-- mobile hamburger menu -->
+        <div class="mobile">
+            <i id="bar" class="bi bi-list-ul"></i>
+        </div>
+    </nav>
+</div>
+
+<!-- main -->
+<div><br></div>
+{% if unpaid_request_exists %}
+    <h4 class="text-center bi bi-exclamation-triangle-fill text-danger"></h4>
+        <h6 class="text-center text-danger">Admin has requested a payment from you | Amount: {{ payment_request_amount }}
+    </h6>
+    <br>
+{% endif %}
+<div>
+    <p class="text-center fs-3 fw-bold p-color">Welcome! {{ current_user.fullname }}</p>
+</div>
+<section class="container mt-4">
+
+    <div class="d-flex gap-5 justify-content-center flex-wrap">
+        <div class="border border-secondary bg-white py-4 px-4 width1 height">
+            <p class="p-color fs-5 fw-semi-bold">Payment Request</p>
+            <p class="text-center p-color py-1 border-bottom fs-5 fw-semi-bold py-2">User Details</p>
+            <label class="p-color fs-5 fw-semi-bold py-2 w-100"><img
+                    src="../../static/img/Login%20Landing%20Page%20images/24-support.png" alt=""> Support</label>
+            <label class="p-color fs-5 fw-semi-bold py-2 w-100 mb-3">
+                <img src="../../static/img/Login%20Landing%20Page%20images/call.png" alt=""> Contact number
+            </label>
+            <label class="p-color fs-5 fw-semi-bold border-top border-bottom py-2 w-100"><img
+                    src="../../static/img/Login%20Landing%20Page%20images/shield-security.png" alt=""> Account Settings</label>
+        </div>
+
+        <div class="bg-white py-4 px-4 width2 ms-md-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="p-color fw-bold pt-3 fs-5">{{ app.app_name }}</p>
+                    <p class="p-color fw-semi-bold pb-3 mb-0">Description:</p>
+                    <p class="p-color fw-semi-bold">{{ app.description }}</p>
+                </div>
+                <div>
+                    {% if app.app_logo %}
+                        {% set logo_url = url_for('static', filename='App_Logo/' + app.app_logo) %}
+                    {% else %}
+                        {% set logo_url = url_for('static', filename='img/Admin Panel images/Group 145.png') %}
+                    {% endif %}
+                    <img src="{{ logo_url }}" alt="App Logo" class="rounded-circle" width="100" height="100">
+                </div>
+            </div>
+            <a href="{{ app.app_url }}"
+               class="w-100 project-snapshot rounded-4 text-light py-2 border-0 d-flex align-items-center justify-content-center">
+                <img src="../../static/img/Login%20Landing%20Page%20images/Vector.png" alt="">
+                <span class="ms-2">Admin URL (GIT HUB)</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <p class="fs-3 fw-semi-bold p-color">Dashboard <img class="pb-1"
+                                                            src="../../static/img/Login%20Landing%20Page%20images/dashboard.png"
+                                                            alt=""></p>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="d-flex flex-column align-items-center gap-4 project-snapshot-bg mx-auto col-md-8 p-5 rounded-3">
+        <p class="p-color fw-bold text-center fs-4 p-4 pb-0">Project Snapshot <img class="img-size"
+                                                                                   src="../../static/img/Login%20Landing%20Page%20images/Description.png"
+                                                                                   alt=""></p>
+
+        <div class="d-flex justify-content-between flex-column flex-md-row w-100 gap-4">
+
+
+            <div class="col-12 col-md-6 bg-white rounded-3 d-flex justify-content-between p-2">
+                <img class="ms-2 img-size mt-1" src="../../static/img/Login%20Landing%20Page%20images/Task.png" alt="">
+                <select class="ms-2 w-100 form-select fw-semi-bold p-color border-0" aria-label="Default select example"
+                        disabled>
+                    <option selected>{{ app.app_name }}</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-md-6 bg-white rounded-3 d-flex justify-content-between p-2">
+                <img class="ms-2 img-size mt-1" src="../../static/img/Login%20Landing%20Page%20images/Project.png"
+                     alt="">
+                <select class="ms-2 w-100 form-select fw-semi-bold p-color border-0" aria-label="Default select example"
+                        disabled>
+                    <option selected>{{ app.status }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between flex-column flex-md-row w-100 gap-4">
+            <div class="col-12 col-md-6 bg-white rounded-3 d-flex justify-content-between p-2">
+                <img class="ms-2 img-size mt-1" src="../../static/img/Login%20Landing%20Page%20images/user.png" alt="">
+                <input class="ms-2 w-100 form-control fw-semi-bold p-color border-0" value="{{ app.assigned_to }}"
+                       disabled>
+            </div>
+
+            <div class="col-12 col-md-6 bg-white rounded-3 d-flex justify-content-between p-2">
+                <img class="ms-2 mt-1 img-size "
+                     src="../../static/img/Login%20Landing%20Page%20images/date%20and%20time.png" alt="">
+                <input class="ms-2 w-100 form-control fw-semi-bold p-color border-0" value="{{ app.deadline }}"
+                       disabled>
+            </div>
+        </div>
+
+        <button class="col-12 col-md-5 height border-1 bg-transparent fw-semi-bold px-2 py-1 rounded-2 p-color">
+            <a href="{{ url_for('download_contract', app_id=app.id) }}"
+               style="color: inherit; text-decoration: none;">
+                <img class="pb-1" src="../../static/img/Login%20Landing%20Page%20images/download-01.png" alt="">
+                Download Contract
+            </a>
+        </button>
+        {#        </div>#}
+    </div>
+
+
+    </div>
+
+
+</section>
+
+<!-- bottom -->
+<section class="container mt-4">
+    <p class="fs-3 p-color fw-semi-bold">User Profile and Settings</p>
+
+    <div class="d-flex justify-content-center">
+
+        <div class="bg-white pt-5 px-5 gap-5 col-md-6">
+            <div class="d-flex gap-5">
+                <!-- Profile Picture -->
+                {% if client.user.image %}
+                    <img class="mx"
+                         src="{{ url_for('static', filename='img/profile_pictures/' + client.user.image) }}" alt="">
+                {% else %}
+                    <img class="mx-auto" src="{{ url_for('static', filename='img/profile_pictures/frame 2345.png') }}"
+                         alt="">
+                {% endif %}
+                <!-- Edit Button for Profile Picture -->
+                <a class="text-decoration-none align-items-end" href="#" onclick="toggleEditMode()">
+                    <img src="../../static/img/Login%20Landing%20Page%20images/edit-05.png" alt="">
+                </a>
+            </div>
+
+
+            <!-- Display Profile Information -->
+            <div id="profile-info">
+                <div>
+                    <p class="text-center fs-3 fw-semi-bold p-color">{{ current_user.fullname }}</p>
+                </div>
+
+                <p class="fs-5 mt-4"><img class="pb-1"
+                                          src="../../static/img/Login%20Landing%20Page%20images/graduation-hat-02.png"
+                                          alt="">
+                    {{ client.specialization }}
+                </p>
+                <p class="py-2 border-top border-bottom"><img class="pb-1"
+                                                              src="../../static/img/Login%20Landing%20Page%20images/mail-01.png"
+                                                              alt="">
+                    {{ client.credentials }}
+                </p>
+                <p class="py-2 border-bottom"><img class="pb-1"
+                                                   src="../../static/img/Login%20Landing%20Page%20images/call.png"
+                                                   alt="">
+                    {{ client.experience }}
+                </p>
+                <p class="py-2 border-bottom"><img class="pb-1"
+                                                   src="../../static/img/Login%20Landing%20Page%20images/shield-security.png"
+                                                   alt="">
+                    {{ client.current_role }}
+                </p>
+                <p class="py-2"><img class="pb-1" src="../../static/img/Login%20Landing%20Page%20images/24-support.png"
+                                     alt="">
+                    {{ client.areas_of_interest }}
+                </p>
+            </div>
+
+            <!-- Edit Form (Hidden by Default) -->
+            <div id="edit-profile" style="display: none;">
+                <form id="edit-profile-form">
+                    <!-- Specialization -->
+
+                    <div class="mb-3">
+                        <label for="specialization" class="form-label">Specialization</label>
+                        <input type="text" class="form-control" name="specialization" id="specialization"
+                               value="{{ client.specialization }}">
+                    </div>
+
+                    <!-- Credentials -->
+                    <div class="mb-3">
+                        <label for="credentials" class="form-label">Credentials</label>
+                        <input type="text" class="form-control" name="credentials" id="credentials"
+                               value="{{ client.credentials }}">
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Experience</label>
+                        <input type="text" class="form-control" name="experience" id="experience"
+                               value="{{ client.experience }}">
+                    </div>
+
+                    <!-- Current Role -->
+                    <div class="mb-3">
+                        <label for="current_role" class="form-label">Current Role</label>
+                        <input type="text" class="form-control" name="current_role" id="current_role"
+                               value="{{ client.current_role }}">
+                    </div>
+
+                    <!-- Areas of Interest -->
+                    <div class="mb-3">
+                        <label for="areas_of_interest" class="form-label">Areas of Interest</label>
+                        <input type="text" class="form-control" name="areas_of_interest" id="areas_of_interest"
+                               value="{{ client.areas_of_interest }}">
+                    </div>
+
+                    <!-- Save Button -->
+                    <button type="button" class="btn btn-primary" onclick="submitProfileEdit()">Save Changes</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="../../static/js/navigation.js"></script>
+<script src="../../static/js/login%20landing%20page.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+<script>
+
+    function toggleEditMode() {
+        var profileInfo = document.getElementById("profile-info");
+        var editProfile = document.getElementById("edit-profile");
+
+        if (editProfile.style.display === "none") {
+            editProfile.style.display = "block";
+            profileInfo.style.display = "none";
+        } else {
+            editProfile.style.display = "none";
+            profileInfo.style.display = "block";
+        }
+    }
+
+    function submitProfileEdit() {
+        var form = document.getElementById("edit-profile-form");
+        var formData = new FormData(form);
+
+        fetch('/update_client_profile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                specialization: formData.get("specialization"),
+                credentials: formData.get("credentials"),
+                experience: formData.get("experience"),
+                current_role: formData.get("current_role"),
+                areas_of_interest: formData.get("areas_of_interest"),
+                client_id: {{ client.id }}
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    toggleEditMode();  // Switch back to view mode
+                } else {
+                    console.error("Failed to update profile");
+                }
+            })
+            .catch(err => {
+                console.error("An error occurred:", err);
+            });
+    }
+</script>
+</body>
+</html>

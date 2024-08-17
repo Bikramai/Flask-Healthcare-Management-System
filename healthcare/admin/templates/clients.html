@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare - Clients</title>
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/admin-panel.css">
+
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <style>
+        th td {
+            border-left: 1px dotted black; /* custom dotted border-bottom */
+            padding: 8px;
+        }
+    </style>
+
+</head>
+<body class="cyan">
+
+<!-- Header -->
+<div class="header-bg">
+    <nav class="container header d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+            <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+        </div>
+        <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5">
+                <a href="{{ url_for('enquiry_requests') }}" class="text-decoration-none">
+                    <i class="bi bi-envelope"></i> Enquiry Requests
+                    {% if new_enquiries_exist %}
+                        <span class="badge bg-danger">New</span>
+                    {% endif %}
+                </a>
+            </li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('user_setup') }}" class="text-decoration-none"><i
+                    class="bi bi-gear"></i> User Setup</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('app_details') }}"
+                                               class="text-decoration-none"><i
+                    class="bi bi-phone"></i> App Details</a></li>
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('clients') }}" class="text-decoration-none"><i
+                    class="bi bi-person"></i> Clients</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('payment') }}" class="text-decoration-none"><i
+                    class="bi bi-cash"></i> Payments</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('admin_panel') }}"
+                                               class="text-decoration-none"><i class="bi bi-speedometer2"></i>
+                Admin Panel</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none"><i
+                    class="bi bi-box-arrow-in-right"></i>
+                Logout</a>
+            </li>
+        </ul>
+        <!-- mobile hamburger menu -->
+        <div class="mobile">
+            <i id="bar" class="bi bi-list-ul"></i>
+        </div>
+    </nav>
+</div>
+<!--Client Profile List -->
+<section class="container mt-3">
+    <p class="fs-2 p-color fw-semibold">Client Account Management</p>
+
+    <div class="d-flex justify-content-between flex-wrap gap-5">
+        <div class="d-flex justify-content-between flex-wrap col-12 col-md-4 bg-white py-2 px-4 height1 gap-1">
+            <form action="{{ url_for('clients') }}" method="GET" class="d-flex align-items-center">
+                <input name="search" class="border-1 col-md-15 rounded-3 bg-input px-4 py-2" type="search"
+                       placeholder="Search" aria-label="Search" value="{{ request.args.get('search', '') }}">
+                <button type="submit" class="btn btn-dark rounded-3 ms-3">Search</button>
+            </form>
+            <img src="../static/img/Admin Panel images/Ellipse 3.png" alt="">
+        </div>
+
+
+        <div class="col-12 col-md-6 p-4">
+            <p class="fs-4 fw-semibold">Client Profile List:</p>
+            {% if clients %}
+                {% for client in clients %}
+                    <div class="bd p-3 rounded-4">
+                        <div class="d-flex flex-wrap justify-content-between gap-4">
+                            <div class="{{ "unread_message" if client.unread_messages() else "" }}">
+                                <img width="100%" src="
+
+                                        {% if client.user.image %}{{ url_for('static', filename='img/Admin Panel images/' + client.user.image) }}{% else %}{{ url_for('static', filename='img/Admin Panel images/Frame 2345.png') }}{% endif %}"
+                                     alt="">
+                            </div>
+                            <div class="d-flex justify-content-between flex-wrap border-bottom pb-3 gap-5">
+                                <div>
+                                    <p class="fs-5 p-color fw-semibold">{{ client.user.fullname }}</p>
+                                    <p class="text-center fs-5"><img class="img-size pb-1"
+                                                                     src="../static/img/Admin Panel images/calendar-date.png"
+                                                                     alt=""> {{ client.created_at.strftime('%d-%m-%Y') }}
+                                    </p>
+                                </div>
+                                <button class="px-4 py-1 bg-transparent border-1 rounded-5 height1 mt-3"
+                                        onclick="location.href='{{ url_for('client_profile', client_id=client.user.id) }}'">
+                                    View Details
+                                </button>
+                            </div>
+                            <div>
+                                <a href="{{ url_for('edit_client_profile', client_id=client.id) }}">
+                                    <img class="img-size1" src="../static/img/Admin Panel images/edit-05.png" alt="">
+                                </a>
+                                <a href="{{ url_for('delete_client_profile', client_id=client.id) }}"
+                                   class="btn btn-danger">Delete</a>
+                            </div>
+
+                        </div>
+                        <button class="px-4 py-1 bg-transparent border-1 rounded-5 height1 mt-3"
+                                onclick="location.href='{{ url_for('admin_chat', client_id=client.user.id) }}'">Chat
+                        </button>
+                        <br>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Dr Profile -->
+
+<script src="/../static/js/admin-panel.js"></script>
+<script src="/../static/js/navigation.js"></script>
+</body>
+</html>

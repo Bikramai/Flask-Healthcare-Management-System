@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="../../static/css/about.css">
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+<body class="app-bg">
+<div class="header-bg">
+    <nav class="container header d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+            <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+        </div>
+        <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('home') }}" class="text-decoration-none">Home</a></li>
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('about') }}" class="text-decoration-none">About</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('faq') }}" class="text-decoration-none">FAQs</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('enquiry') }}" class="text-decoration-none">Contact Us</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none">Login</a></li>
+        </ul>
+        <!-- mobile hamburger menu -->
+        <div class="mobile">
+            <i id="bar" class="bi bi-list-ul"></i>
+        </div>
+    </nav>
+</div>
+
+<!-- Head -->
+<h1 class="text-center text-color p-4 fs-2 fw-bold">Empowering Healthcare Education <br> through Innovation</h1>
+
+<!-- Main -->
+
+<div class="container">
+    <div class="container"><h2 class="text-color">About Us:</h2></div>
+
+    <!-- Introduction -->
+    <div class="d-flex flex-lg-row flex-column justify-content-between gap-3">
+        <div class="left col-12 col-lg-7 ps-4">
+            <h2 class="fw-bold text-color2">Introduction:</h2>
+            <p class="fs-5 p-color short-text" id="intro-short">Welcome to MedicalAppCreator.com, a platform born from a
+                deep-rooted passion for education and a desire to empower healthcare students and professionals...</p>
+            <p class="fs-5 p-color full-text" id="intro-full" style="display: none;">My journey began while studying for
+                my Physician Associate course, where I simultaneously built a business. This experience was not just
+                about understanding business dynamics; it was a journey of learning from my own mistakes and recognizing
+                the complexities of medical software and educational apps. My mission became clear: to simplify the
+                process for healthcare students to create educational content, thereby improving healthcare while saving
+                them from the...</p>
+            <button class="button rounded-3 bg-transparent fw-semibold px-4 py-2" onclick="toggleText('intro')">Learn
+                More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+        </div>
+        <div class="right ps-4">
+            <img class="img-fluid" src="../../static/img/about-images/Screenshot%202024-01-27%20163129%202.png" alt="">
+        </div>
+    </div>
+
+    <!-- Early Business Ventures -->
+    <div class="d-flex flex-lg-row flex-column justify-content-between gap-3 mt-5">
+        <div class="left col-12 col-lg-7 ps-4 order-2">
+            <h2 class="fw-bold text-color2">Early Business Ventures:</h2>
+            <p class="fs-5 p-color short-text" id="early-short">Since the age of 18, my entrepreneurial spirit has been
+                evident. While working in Australia, I became a top travel salesman in my company...</p>
+            <p class="fs-5 p-color full-text" id="early-full" style="display: none;">Since the age of 18, my
+                entrepreneurial spirit has been evident. While working in Australia, I became a top travel salesman in
+                my company. This success was followed by an enterprise in gym equipment sales, where I refurbished and
+                sold gym equipment. The leap into the digital world came next. My goal? To create something scalable
+                with a broader impact. This digital transition marked a significant shift in my career, laying the
+                foundation for what MedicalAppCreator.com</p>
+            <button class="button rounded-3 bg-transparent fw-semibold px-4 py-2" onclick="toggleText('early')">Learn
+                More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+        </div>
+        <div class="right order-1 ps-4">
+            <img class="img-fluid" src="../../static/img/about-images/Rectangle%209.png" alt="">
+        </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="d-flex flex-lg-row flex-column justify-content-between gap-3 mt-5">
+        <div class="left col-12 col-lg-7 ps-4">
+            <h2 class="fw-bold text-color2">Challenges in Medical Software:</h2>
+            <p class="fs-5 p-color short-text" id="challenges-short">During my studies, the challenges of medical
+                software became apparent. Conversations with experts revealed a startling fact: developing a medical app
+                could cost upwards of $30,000...</p>
+            <p class="fs-5 p-color full-text" id="challenges-full" style="display: none;">During my studies, the
+                challenges of medical software became apparent. Conversations with experts revealed a startling fact:
+                developing a medical app could cost upwards of $30,000. The regulatory landscape added layers of
+                complexity, requiring features that significantly increased costs and design criteria differing vastly
+                between the Play Store and iOS. This learning curve was steep and expensive. Fortunately, mentorship
+                from a large digital firm and my own experiences paved the way for this venture, allowing me to offer a
+                service to create educational apps without the excessive costs or rejections...</p>
+            <button class="button rounded-3 bg-transparent fw-semibold px-4 py-2" onclick="toggleText('challenges')">
+                Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+        </div>
+        <div class="right ps-4">
+            <img class="img-fluid" src="../../static/img/about-images/Rectangle%209.2.png" alt="">
+        </div>
+    </div>
+
+    <!-- Educational Background -->
+    <div class="d-flex flex-lg-row flex-column justify-content-between gap-3 mt-5">
+        <div class="left col-12 col-lg-7 ps-4 order-2">
+            <h2 class="fw-bold text-color2">Educational Background and Healthcare Experience:</h2>
+            <p class="fs-5 p-color short-text" id="education-short">My academic journey includes a First-Class degree in
+                Physiological Sciences from the University of Newcastle and a Master’s in Physician Associate Studies
+                from the University of Bradford...</p>
+            <p class="fs-5 p-color full-text" id="education-full" style="display: none;">My academic journey includes a
+                First-Class degree in Physiological Sciences from the University of Newcastle and a Master’s in
+                Physician Associate Studies from the University of Bradford. My connection to healthcare extends beyond
+                academics; I worked as a senior carer in a dementia residence during the COVID-19 pandemic. These
+                experiences have reinforced my commitment to making...</p>
+            <button class="button rounded-3 bg-transparent fw-semibold px-4 py-2" onclick="toggleText('education')">
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="30" fill="currentColor"
+                     class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg>
+            </button>
+        </div>
+        <div class="right order-1 ps-4">
+            <img class="img-fluid" src="../../static/img/about-images/Rectangle%209.3.png" alt="">
+        </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="d-flex flex-lg-row flex-column justify-content-between gap-3 mt-5">
+        <div class="left col-12 col-lg-7 ps-4">
+            <h2 class="fw-bold text-color2">Our Mission:</h2>
+            <p class="fs-5 p-color short-text" id="mission-short">At MedicalAppCreator.com, we bridge the gap between
+                healthcare knowledge and digital accessibility. We understand the hurdles of app development in this
+                niche and offer a streamlined, cost-effective solution...</p>
+            <p class="fs-5 p-color full-text" id="mission-full" style="display: none;">At MedicalAppCreator.com, we
+                bridge the gap between healthcare knowledge and digital accessibility. We understand the hurdles of app
+                development in this niche and offer a streamlined, cost-effective solution. Our platform is not just a
+                tool; it's a testament to the resilience, adaptability, and innovation that the healthcare industry
+                needs. Join us in our endeavor to revolutionize healthcare...</p>
+            <button class="button rounded-3 bg-transparent fw-semibold px-4 py-2" onclick="toggleText('mission')">Learn
+                More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+        </div>
+        <div class="right ps-4">
+            <img class="img-fluid" src="../../static/img/about-images/Rectangle%209.4.png" alt="">
+        </div>
+    </div>
+</div>
+
+<script src="../../static/js/navigation.js"></script>
+<script>
+    function toggleText(section) {
+        var shortText = document.getElementById(section + '-short');
+        var fullText = document.getElementById(section + '-full');
+
+        if (shortText.style.display === 'none') {
+            shortText.style.display = 'block';
+            fullText.style.display = 'none';
+        } else {
+            shortText.style.display = 'none';
+            fullText.style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html>
+

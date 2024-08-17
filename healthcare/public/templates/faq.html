@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/faq.css">
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+<body class="app-bg">
+     <!-- Header -->
+     <div class="header-bg">
+        <nav class="container header d-flex justify-content-between align-items-center py-2">
+            <div class="logo">
+               <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+            </div>
+            <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('home') }}" class="text-decoration-none">Home</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('about') }}" class="text-decoration-none">About</a></li>
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('faq') }}" class="text-decoration-none">FAQs</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('enquiry') }}" class="text-decoration-none">Contact Us</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none">Login</a></li>
+        </ul>
+            <!-- mobile hamburger menu -->
+            <div class="mobile">
+                <i id="bar" class="bi bi-list-ul"></i>
+            </div>
+         </nav>
+       </div>
+    <section class="bg">
+        <div class="text-light container d-flex justify-content-between flex-column flex-lg-row">
+            <div class="d-flex flex-column justify-content-center col-12 col-lg-6 p-4">
+                <p class="fw-semi-bold fs-1">FAQs</p>
+                <p class="fw-semi-bold">Explore common healthcare questions from basics to insurance, providing concise answers to demystify various aspects of the healthcare landscape.</p>
+            </div>
+            <div class="col-12 col-lg-6 d-flex justify-content-lg-end justify-content-center">
+                <img src="../../static/img/FAQs%20images/13018397_cuteanimated-157%201.png" alt="" class="w-75">
+            </div>
+        </div>
+    </section>
+
+    <div class="container p-4 mt-2 d-flex justify-content-center ">
+        <p class="fs-2 fw-semi-bold text-center w-50 text-color">Have anything to ask? You’re in the right place!</p>
+    </div>
+
+    <section class="container">
+        <!-- 1 -->
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question1"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  1. What kind of apps can I create with your service?</p>
+                <p class="text-secondary" id="answer1"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">Our service specializes in developing educational and revision apps tailored for healthcare students.</span><span class="full-answer" style="display: none;"> We can help you create a range of apps, from flashcard-based learning tools to comprehensive exam preparation apps, all designed to enhance the learning experience.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('1')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question2"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  2. How does the app creation process work?</p>
+                <p class="text-secondary" id="answer2"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">The process begins with your idea.</span><span class="full-answer" style="display: none;"> Once you contact us, we'll discuss your vision, suggest features, and then our team of full-stack developers will start building your app. You'll have an admin panel to manage content, and we'll guide you through each step until the final product is ready.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('2')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question3"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  3. How long does it take to develop an app?</p>
+                <p class="text-secondary" id="answer3"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">The development time depends on the complexity of the app.</span><span class="full-answer" style="display: none;"> Generally, it can take anywhere from a few weeks to several months. We'll provide a more accurate timeline after understanding your project in detail.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('3')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question4"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  4. Can I update the app content after it's built?</p>
+                <p class="text-secondary" id="answer4"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">Absolutely! You'll have access to an easy-to-use admin panel.</span><span class="full-answer" style="display: none;"> This ensures that your app remains current and useful to your users.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('4')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question5"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  5. Is my app idea protected when I discuss it with you?</p>
+                <p class="text-secondary" id="answer5"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">Yes, your ideas are completely safe with us.</span><span class="full-answer" style="display: none;"> We adhere to strict confidentiality policies and are happy to sign a non-disclosure agreement (NDA) to protect your intellectual property.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('5')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question6"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  6. What kind of support do you offer post-launch?</p>
+                <p class="text-secondary" id="answer6"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">We offer various support packages that include bug fixes, technical support, and periodic updates.</span><span class="full-answer" style="display: none;"> Contact us to learn more about the support options available.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('6')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question7"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  7. How much does it cost to create an app?</p>
+                <p class="text-secondary" id="answer7"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">The cost varies depending on the complexity and features of your app.</span><span class="full-answer" style="display: none;"> We offer different packages to suit various needs and budgets. Please contact us for a detailed quote and to discuss your specific requirements.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('7')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question8"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  8. Do I need technical skills to manage my app?</p>
+                <p class="text-secondary" id="answer8"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">No, technical skills are not necessary.</span><span class="full-answer" style="display: none;"> Our admin panel is designed to be user-friendly, and we'll provide you with all the necessary training and support to manage your app effectively.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('8')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="d-flex justify-content-between flex-column flex-lg-row">
+            <div class="col-sm-12 col-md-6 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question9"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  9. Can you help with app store submissions?</p>
+                <p class="text-secondary" id="answer9"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">Yes, we assist in submitting your app to the appropriate app stores (iOS and Android).</span><span class="full-answer" style="display: none;"> We ensure it meets all the necessary guidelines for approval.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('9')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+            <div class="col-md-6 col-sm-12 p-4">
+                <p class="fw-semi-bold text-color fs-6" id="question10"><img src="../../static/img/FAQs%20images/annotation-question.png" alt="">  10. Do you provide marketing and SEO services for the app?</p>
+                <p class="text-secondary" id="answer10"><span class="text-dark fw-bold">Answer:</span> <span class="short-answer">While our primary focus is on app development, we can offer basic guidance on marketing and SEO strategies.</span><span class="full-answer" style="display: none;"> For more advanced needs, we recommend partnering with specialized marketing agencies to maximize your app's reach and impact.</span></p>
+                <button class="button rounded-3 bg-transparent fw-semi-bold" onclick="toggleAnswer('10')">Learn More<img class="ps-2" src="../../static/img/FAQs%20images/Icon.png" alt=""></button>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center my-4">
+            <a href="{{ url_for('enquiry') }}"><button class="width1 bg py-2 rounded-3 text-light fw-semi-bold border-light">Enquire for more</button></a>
+        </div>
+    </section>
+    <script src="../../static/js/navigation.js"></script>
+    <script>
+        function toggleAnswer(id) {
+            const fullAnswer = document.querySelector(`#answer${id} .full-answer`);
+            const button = document.querySelector(`#answer${id} + button`);
+            if (fullAnswer.style.display === "none") {
+                fullAnswer.style.display = "inline";
+                button.textContent = "Show Less";
+            } else {
+                fullAnswer.style.display = "none";
+                button.innerHTML = `Learn More <img src="../../static/img/FAQs%20images/Icon.png" alt="icon" style="width: 16px; height: 16px; margin-right: 5px;"> `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app-bg{
+    background-color: #DDFDFF;
+}
+.btn1{
+    width: 400px;
+    border: 0;
+    background: rgba(17, 199, 204, 1);
+    color: white;
+
+}
+.btn1:hover{
+    color: rgba(17, 199, 204, 1);
+    background-color: #ffffff;
+}
+.custom-checkbox {
+    transform: scale(1.5); /* Adjust the scale factor as needed */
+    margin-right: 5px; 
+    /* Adjust the margin for proper spacing */
+  }
+  .phone-icon::before {
+    content: "\260E"; /* Unicode for phone icon */
+    margin-right: 10px;
+  }
+  .email-icon::before {
+    content: "\2709"; /* Unicode for email icon */
+    margin-right: 10px;
+  }

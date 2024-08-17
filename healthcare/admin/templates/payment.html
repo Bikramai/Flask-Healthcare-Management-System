@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare - Payments</title>
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/admin-panel.css">
+
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons CSS -->
+    <style>
+        th td {
+            border-left: 1px dotted black; /* custom dotted border-bottom */
+            padding: 8px;
+        }
+    </style>
+
+</head>
+<body class="cyan">
+
+<!-- Header -->
+<div class="header-bg">
+    <nav class="container header d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+            <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+        </div>
+        <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5">
+                <a href="{{ url_for('enquiry_requests') }}" class="text-decoration-none">
+                    <i class="bi bi-envelope"></i> Enquiry Requests
+                    {% if new_enquiries_exist %}
+                        <span class="badge bg-danger">New</span>
+                    {% endif %}
+                </a>
+            </li>
+
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('user_setup') }}" class="text-decoration-none"><i
+                    class="bi bi-gear"></i> User Setup</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('app_details') }}" class="text-decoration-none"><i
+                    class="bi bi-phone"></i> App Details</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('clients') }}" class="text-decoration-none"><i
+                    class="bi bi-person"></i> Clients</a></li>
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('payment') }}" class="text-decoration-none"><i
+                    class="bi bi-cash"></i> Payments</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('admin_panel') }}"
+                                               class="text-decoration-none"><i class="bi bi-speedometer2"></i>
+                Admin Panel</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none"><i
+                    class="bi bi-box-arrow-in-right"></i>
+                Logout</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<section class="container my-5">
+
+    <div class="bg-white shadow rounded p-5">
+        <h3 class="p-color" style="font-weight: bold">Project Details</h3>
+        <h6 class="p-color">Please select the client from drop down menu:</h6>
+        <br>
+        <div class="mb-3">
+            <label for="app-name" class="form-label p-color fw-semibold">Project Name</label>
+            <select class="form-select" id="app-name" name="app_name" required>
+                <option selected>Please select the project</option>
+                {% for app in app_details %}
+                    <option value="{{ app.id }}">{{ app.app_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="client-name" class="form-label p-color fw-semibold">Client Name</label>
+            <input type="text" class="form-control" id="client-name" name="client_name" required readonly>
+        </div>
+        <div class="mb-3">
+            <label for="client-email" class="form-label p-color fw-semibold">Client Email</label>
+            <input type="text" class="form-control" id="client-email" name="client_email" required readonly>
+        </div>
+        <div class="mb-3">
+            <label for="deadline" class="form-label p-color fw-semibold">Deadline</label>
+            <input type="text" class="form-control" id="deadline" name="deadline" required readonly>
+        </div>
+        <div class="mb-3">
+            <label for="assigned-to" class="form-label p-color fw-semibold">Assigned To</label>
+            <input type="text" class="form-control" id="assigned-to" name="assigned_to" required readonly>
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label p-color fw-semibold"> Project Status</label>
+            <input type="text" class="form-control" id="status" name="status" required readonly>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label p-color fw-semibold">Price</label>
+            <input type="text" class="form-control" id="price" name="price" required>
+        </div>
+        <button id="request-payment" class="btn btn-dark w-100 rounded-3 text-light py-2">Request Payment</button>
+    </div>
+
+    <div class="table-responsive mt-4">
+        <h3 class="p-color" style="font-weight: bold">Payment History</h3>
+        <h6 class="p-color">Below are all the payment requests that have been made:</h6>
+        <table class="table border-dark table-info" style="border-bottom: 1px dotted black; border:1px solid black">
+            <thead>
+            <tr class="">
+                <th class="col-2 text-center">Project Name</th>
+                <th class="col-2 text-center">Client Name</th>
+                <th class="col-2 text-center">Client Email</th>
+                <th class="col-2 text-center">Date Requested</th>
+                <th class="col-2 text-center">Amount</th>
+                <th class="col-12 text-center">Status</th>
+                <th class="col-2 text-center">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for request in payment_requests %}
+                <tr>
+                    <td class="col-2 text-center p-3">{{ request.app.app_name }}</td>
+                    <td class="col-2 text-center p-3">{{ request.client_name }}</td>
+                    <td class="col-2 text-center p-3">{{ request.client_email }}</td>
+                    <td class="col-2 text-center p-3">{{ request.date_requested }}</td>
+                    <td class="col-2 text-center p-3">{{ request.amount }}</td>
+                    <td class="col-2 text-center p-3">{{ request.status }}</td>
+                    <td class="text-center">
+                        <div>
+                            <button onclick="markAsPaid({{ request.id }})"
+                                    class="btn btn-success w-100 rounded-3 text-light" style="font-size: 12px"
+                                    {% if request.status == 'Paid' %} disabled {% endif %}>
+                                Mark as Paid
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var appDetails = {{ app_details | tojson }};
+
+            $('#app-name').change(function () {
+                var selectedAppId = $(this).val();
+                var selectedApp = appDetails.find(app => app.id == selectedAppId);
+
+                if (selectedApp) {
+                    $('#client-name').val(selectedApp.client_name);
+                    $('#client-email').val(selectedApp.client_email);
+                    $('#deadline').val(selectedApp.deadline);
+                    $('#assigned-to').val(selectedApp.assigned_to);
+                    $('#status').val(selectedApp.status);
+                    $('#price').val(selectedApp.price);
+                } else {
+                    $('#client-name').val('');
+                    $('#client-email').val('');
+                    $('#deadline').val('');
+                    $('#assigned-to').val('');
+                    $('#status').val('');
+                    $('#price').val('');
+                }
+            });
+
+            $('#request-payment').click(function () {
+                var selectedAppId = $('#app-name').val();
+                var price = $('#price').val();
+
+                $(this).html("Requesting...");
+                $(this).prop('disabled', true);
+
+                $.post('/request_payment', {app_id: selectedAppId, price: price}, function (response) {
+                    if (response.success) {
+                        location.reload();
+                        removeOptionFromDropdown(response.app_id); // Call function to remove option from dropdown
+                    } else {
+                        alert('Failed to request payment.');
+                    }
+                });
+            });
+        });
+
+        function markAsPaid(paymentId) {
+            $.post('/mark_as_paid/' + paymentId, function (response) {
+                if (response.success) {
+                    var button = $('button[onclick="markAsPaid(' + paymentId + ')"]');
+                    button.prop('disabled', true);
+                    button.closest('tr').find('td').eq(5).text('Paid');
+                } else {
+                    alert('Failed to mark as paid.');
+                }
+            });
+        }
+
+        function removeOptionFromDropdown(appId) {
+            console.log("Removing option with ID:", appId);
+            $('#app-name option[value="' + appId + '"]').remove();
+        }
+
+    </script>
+</body>
+</html>

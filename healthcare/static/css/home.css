@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.app-bg{
+    background-color: #DDFDFF;
+}
+.text-color{
+    color: #11C7CC;
+}
+.p-color{
+    color: #1C124399;
+    
+}
+.btns2{
+    border: 2px solid rgba(3, 180, 227, 0.16);
+}
+
+.btns2:hover{
+    background-color:  rgb(31, 182, 232) !important;
+    color: white !important;
+}
+.color2{
+    color:#1C1243;
+    
+}
+.bgcolor2{
+   background-color:#1C1243;
+    
+}
+.list-color{
+    color: #074c5d;
+}
+.start-color{
+    background-color: #03B4E3;
+}
+.app-today{
+    width: fit-content;
+    border-radius: 15px 0px 15px 0px;
+    color: white;
+}
+.bg2{
+    background-image: linear-gradient(to right, #286365, #000000);
+}
+.bg5{
+    
+    background-image: url('/../static/img/landing-page-images/Background.jpg');
+}
+.index{
+    z-index: 0;
+}
+.index2{
+    z-index:  1;
+}
+.pricing-border{
+    border: 2px solid #11C7CC;
+}
+.price-button{
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+}
+.price-button:hover{
+    background-color:cyan;
+}
+.middle-price-card-left-border
+{
+    border-top: none;
+    border-right: none;
+    border-bottom: none; 
+    border-left: 10px solid;
+    border-image:linear-gradient(167.77deg, #1C1243 -22.67%, #1C1243 29.03%, #DBFF00 94.18%) 1;
+    
+    
+}
+.pricing-hat{
+    left: 20px;
+    right: 20px;
+    margin-top: -130px;
+    border-radius: 15px 15px 0 0;
+}
+.bottom-div{
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    background: #0A5468;
+}
+.cards-bg{
+    
+
+    background: rgba(157, 94, 239, 0.9);
+    
+}
+.card-outer-bg{
+    background: rgba(0, 0, 0, 0.1);
+    
+}
+.cards-clip
+{
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+
+}
+.border-set{
+    border-radius: 0px 20px 0px 0px;
+}
+.border-set1{
+    border-radius: 45px 20px 0px 0px;
+}
+
+.section4-bg
+{
+    background-image: url('../img/landing-page-images/Union.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.section4-inner-txt-margin
+{
+    margin-top: 200px;
+}
+.rounded-circle
+{
+    border-radius: 100px;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.section5-bg
+{
+    background-image: url('../img/landing-page-images/Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.section5-p
+{
+    color: rgba(255, 255, 255, 0.6);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.6)
+}

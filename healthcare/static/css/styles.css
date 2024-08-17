@@ -1,0 +1,131 @@
+
+.chat-container {
+    margin-top: 95px; /* Additional margin to separate chat container from the navbar */
+    width: 90%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chat-box {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+.message-form {
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    width: fit-content; /* Adjusts the width to fit the content */
+    max-width: 70%; /* Limits the maximum width to 70% of its parent element */
+    overflow-wrap: break-word; /* Ensures long words do not cause overflow */
+}
+
+.sent {
+    background-color: #007bff;
+    margin-left: auto;  /* Pushes the message box to the right */
+    align-items: flex-end; /* Aligns the text and meta info to the right within the message box */
+}
+
+.received {
+    background-color: #6c757d;
+    margin-right: auto;  /* Pushes the message box to the left */
+    align-items: flex-start; /* Aligns the text and meta info to the left within the message box */
+}
+
+.message-content p {
+    margin: 0;
+}
+
+.message-meta {
+    align-self: flex-end; /* Ensures meta information is aligned to the end of the message */
+}
+
+
+.message-form textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.message-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background: rgba(255,255,255,0.5);
+}
+
+
+.header-bg
+{
+    background: rgba(40, 28, 90, 1);
+
+}
+.header ul li a{
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+
+ }
+ .header ul li{
+    list-style: none;
+    background: rgba(255, 255, 255, 0.08);
+}
+.active
+{
+    background: rgba(13, 108, 252, 1)!important;
+
+}
+.header ul li a:hover,.header ul li a.active{
+    color: #a2a59e;
+}
+.mobile
+{
+    display: none;
+}

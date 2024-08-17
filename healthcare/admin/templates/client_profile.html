@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Profile</title>
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/admin-panel.css">
+
+    <link rel="stylesheet" href="../../static/css/font.css">
+    <link rel="stylesheet" href="../../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <style>
+        th td {
+            border-left: 1px dotted black; /* custom dotted border-bottom */
+            padding: 8px;
+        }
+    </style>
+
+</head>
+<body class="cyan">
+
+<!-- Header -->
+<div class="header-bg">
+    <nav class="container header d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+            <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+        </div>
+        <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5">
+                <a href="{{ url_for('enquiry_requests') }}" class="text-decoration-none">
+                    <i class="bi bi-envelope"></i> Enquiry Requests
+                    {% if new_enquiries_exist %}
+                        <span class="badge bg-danger">New</span>
+                    {% endif %}
+                </a>
+            </li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('user_setup') }}" class="text-decoration-none"><i
+                    class="bi bi-gear"></i> User Setup</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('app_details') }}"
+                                               class="text-decoration-none"><i
+                    class="bi bi-phone"></i> App Details</a></li>
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('clients') }}" class="text-decoration-none"><i
+                    class="bi bi-person"></i> Clients</a></li>
+        <li class="px-3 py-2 rounded-5"><a href="{{ url_for('payment') }}" class="text-decoration-none"><i
+                    class="bi bi-cash"></i> Payments</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('admin_panel') }}"
+                                               class="text-decoration-none"><i class="bi bi-speedometer2"></i>
+                Admin Panel</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none"><i
+                    class="bi bi-box-arrow-in-right"></i>
+                Logout</a>
+            </li>
+        </ul>
+        <!-- mobile hamburger menu -->
+        <div class="mobile">
+            <i id="bar" class="bi bi-list-ul"></i>
+        </div>
+    </nav>
+</div>
+
+<div class="col-12">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<section class="container mt-3" id="profile-view">
+    <div>
+        <p class="fw-semibold fs-5 text-center">Profile View: <span class="fw-bold">{{ client.user.fullname }}</span></p>
+    </div>
+    <div>
+        <button class="px-4 py-1 bg-transparent border-1 rounded-5 height1 mt-3" style= "color: black;"><a href="{{ url_for('clients') }}">Back to Clients</a></button>
+    </div>
+
+    <!-- The content of the profile view section from your provided code -->
+
+    <div class="mt-3 bgset">
+        <!-- The content of the profile view section from your provided code -->
+        <div class="d-flex justify-content-between gap-4 flex-wrap">
+            <div class="col-md-3">
+                <img class="p-5 w-100" src="{% if client.user.image %}{{ url_for('static', filename='img/Admin Panel images/' + client.user.image) }}{% else %}{{ url_for('static', filename='img/default_picture.png') }}{% endif %}" alt="">
+                <div class="px-4 pb-5">
+                    <!-- Additional content for profile settings -->
+                </div>
+            </div>
+            <div class="mt-5 col-md-8">
+                <p class="p-color fs-5 fw-semibold">{{ client.user.fullname }}</p>
+                <p class="p-color fs-5 fw-semibold mt-5">Credentials:</p>
+                <p class="p-color fs-5"> {{ client.credentials }}</p>
+                <p class="p-color fs-5 fw-semibold mt-5">Specialization:</p>
+                <p class="p-color fs-5">{{ client.specialization }}</p>
+                <p class="p-color fs-5 fw-semibold mt-5">Experience:</p>
+                <p class="p-color fs-5">{{ client.experience }}</p>
+                <p class="p-color fs-5 fw-semibold mt-5">Current Role:</p>
+                <p class="p-color fs-5">{{ client.current_role }}</p>
+                <p class="p-color fs-5 fw-semibold mt-5">Areas of Interest:</p>
+                <p class="p-color fs-5">{{ client.areas_of_interest }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare - Home</title>
+    <link rel="stylesheet" href="/../static/css/home.css">
+    <link rel="stylesheet" href="/../static/vendor/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../static/css/font.css">
+    <link rel="stylesheet" href="/../static/css/responsiveNav.css">
+    <link rel="stylesheet" href="/../https://cdn.misdeliver.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+</head>
+<body class="app-bg">
+<div class="header-bg">
+    <nav class="container header d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+            <img src="../../static/img/site-logo/logo.png" alt="" class="w-100">
+        </div>
+        <ul class="d-flex column-gap-5 mt-3" id="navbar">
+            <li class="px-3 py-2 rounded-5 active"><a href="{{ url_for('home') }}" class="text-decoration-none">Home</a>
+            </li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('about') }}" class="text-decoration-none">About</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('faq') }}" class="text-decoration-none">FAQs</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('enquiry') }}" class="text-decoration-none">Contact
+                Us</a></li>
+            <li class="px-3 py-2 rounded-5"><a href="{{ url_for('login') }}" class="text-decoration-none">Login</a></li>
+        </ul>
+        <!-- mobile hamburger menu -->
+        <div class="mobile">
+            <i id="bar" class="bi bi-list-ul"></i>
+        </div>
+    </nav>
+</div>
+
+<section class="container d-flex justify-content-between gap-5 flex-column flex-lg-row">
+    <div class="pt-5 mt-5 col-12 col-lg-5">
+        <p class="fs-2 fw-bold">We Create Custom Educational Apps Tailored for Healthcare Professionals.</p>
+        <ul class="list-unstyled">
+            <li class="fs-4 list-color fw-semi-bold "><img
+                    src="/../static/img/landing-page-images/arrow-block-right.png" alt="" class="img-fluid">
+                Professionalism and Trust
+            </li>
+            <li class="fs-4 list-color fw-semi-bold "><img
+                    src="/../static/img/landing-page-images/arrow-block-right.png" alt="" class="img-fluid"> Innovation
+                and Customization
+            </li>
+            <li class="fs-4 list-color fw-semi-bold "><img
+                    src="/../static/img/landing-page-images/arrow-block-right.png" alt="" class="img-fluid"> Educational
+                and Empowering
+            </li>
+            <li class="fs-4 list-color fw-semi-bold "><img
+                    src="/../static/img/landing-page-images/arrow-block-right.png" alt="" class="img-fluid">
+                User-Friendly Interface
+            </li>
+            <li class="fs-4 list-color fw-semi-bold "><img
+                    src="/../static/img/landing-page-images/arrow-block-right.png" alt="" class="img-fluid"> Compliance
+                with healthcare regulations
+            </li>
+            <li class="fs-4 list-color fw-semi-bold "><img
+                    src="/../static/img/landing-page-images/arrow-block-right.png" alt="" class="img-fluid"> Cost
+                savings
+            </li>
+            <li class="fs-4 list-color fw-semi-bold"><img src="/../static/img/landing-page-images/arrow-block-right.png"
+                                                          alt="" class="img-fluid"> personalized development
+            </li>
+        </ul>
+        <button onclick="window.location.href='{{ url_for('enquiry') }}'" class="start-color app-today mt-3 border-0"><a
+                href="{{ url_for('enquiry') }}"></a>
+            <p class="fs-4 px-5 py-2">Start Building Your App Today</p>
+        </button>
+    </div>
+    <div class="col-lg-7 col-sm-12 d-none d-lg-block">
+        <img src="/../static/img/landing-page-images/Screenshot_2024-03-04_010713-removebg-preview.png"
+             class="img-fluid w-100" alt="">
+    </div>
+</section>
+
+<!-- Section 2 -->
+<img class="w-100 mt-5" src="/../static/img/landing-page-images/Vector.png" alt="">
+<section class="bg2 pb-5 h-auto">
+
+    <div class="d-flex flex-column align-items-center">
+        <div class="d-flex justify-content-between">
+            <div class="d-none d-lg-block">
+                <img src="/../static/img/landing-page-images/image-top-left.png" alt="" style="margin-top:-130px">
+            </div>
+            <div class=" mt-5 w-100">
+                <p class="fs-2 fw-bold text-white text-center mt-5">Empowering Healthcare Education through
+                    Innovation</p>
+            </div>
+            <div class="d-none d-lg-block">
+                <img src="/../static/img/landing-page-images/image-top-right.png" alt="" style="margin-top:-100px">
+            </div>
+        </div>
+        <p class="container fs-5 text-white text-center col-lg-7 col-12 fw-lighter">In the rapidly evolving field of
+            healthcare, staying updated with the latest knowledge is crucial. Our platform enables medical professionals
+            and educators to create custom medical education apps effortlessly, without the high costs and technical
+            challenges of starting from scratch. By utilizing our ready-made code, you can focus on what truly
+            matters—enhancing medical education and reducing the risk of costly errors.</p>
+    </div>
+
+
+    <!-- CARDS -->
+    <div class="d-flex justify-content-center gap-5 pt-5 flex-lg-row flex-column">
+        <div class="d-flex flex-column align-items-center ">
+            <img src="/../static/img/landing-page-images/search_4660868 1.png" alt="">
+            <p class="text-center text-light fs-4">Make your dream App</p>
+            <p class="text-center text-light fs-6 fw-lighter w-75 ">Bring your vision to life with our user-friendly
+                platform. Whether you're a medical student, educator, or healthcare professional, you can design and
+                launch your own educational app in just a few steps. No coding skills required. Our intuitive interface
+                ensures that you can focus on content and learning outcomes rather than technical details. </p>
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+            <img src="/../static/img/landing-page-images/sponsor_11320843 1.png" alt="">
+            <p class="text-center text-light fs-4">Choose your package</p>
+            <p class="text-center text-light fs-6 fw-lighter w-75">We offer flexible packages to suit your needs. From
+                basic features to advanced functionalities, select the package that best fits your educational goals and
+                budget. Our tiered options allow you to scale your app as your needs grow, ensuring you get the best
+                value and functionality. </p>
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+            <img src="/../static/img/landing-page-images/funding_12002191 1.png" alt="">
+
+            <p class="text-center text-light fs-4">Get your earning</p>
+            <p class="text-center text-light fs-6 w-75 fw-lighter">Monetize your knowledge and expertise. Our platform
+                not only helps you create educational apps but also provides tools to manage subscriptions, payments,
+                and analytics. Turn your app into a revenue-generating resource while contributing to the advancement of
+                medical education. </p>
+
+        </div>
+    </div>
+</section>
+<img src="/../static/img/landing-page-images/Vector-2.png" class="w-100" alt="">
+
+<!-- Section 3 -->
+<section class="container mb-5">
+    <div class="pb-5 d-flex justify-content-center mt-3">
+        <p class="fs-2 fw-bold text-center color2 px-3 w-75">We Create Custom Educational Apps Tailored for Healthcare
+            Professionals.</p>
+    </div>
+    <div class="d-flex justify-content-center gap-5 pricing-card mt-5 flex-lg-row flex-column">
+        <!-- PRICE 1 -->
+        <div class="pricing-border bg-light position-relative pt-5 mt-5 rounded-4 w-100 h-auto">
+            <div class="pricing-hat position-absolute start-color pt-4">
+                <p class="text-light mx-5 fs-5 fw-semi-bold text-center">Budget Package</p>
+                <div class="text-light d-flex justify-content-center gap-4">
+                    <p class="text-decoration-line-through fw-semi-bold">$1000.00</p>
+                    <p class="fw-semi-bold">$599.00</p>
+                </div>
+                <p class="fw-semi-bold px-5 mx-5 text-light">Save $401.00</p>
+            </div>
+            <div class="d-flex flex-column align-items-start p-5 mb-5 mt-3">
+                <ul class="list-styled d-flex flex-column gap-3">
+                    <li class="fs-5 fw-bold">Pros:</li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> No Monthly Fees
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Custom Design
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/waves.png"
+                                                  alt=""></li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Educational Features
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Easy-to-Use Admin Panel
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Support for Bugs
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Quick Uploads
+                    </li>
+                    <li class="fs-5 fw-bold">Cons:</li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-red.png"
+                                                  alt=""> No Image Uploads
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-red.png"
+                                                  alt=""> Play Store Only
+                    </li>
+                </ul>
+                <button onclick="location.href='{{ url_for('enquiry') }}'"
+                        class="price-button fs-5 p-3 start-color text-light mt-5 position-absolute rounded-5 border-0">
+                    Start Building Your App Today
+                </button>
+            </div>
+        </div>
+        <!-- PRICE 2 -->
+        <div class="bg-light position-relative pt-5 middle-price-card-left-border mt-5 rounded-4 w-100 h-auto">
+            <div class="pricing-hat position-absolute bgcolor2 pt-4">
+                <p class="text-light mx-5 fs-5 fw-semi-bold text-center">Best Value Package</p>
+                <div class="text-light d-flex justify-content-center gap-4">
+                    <p class="text-decoration-line-through fw-semi-bold">$1250.00</p>
+                    <p class="fw-semi-bold">$699.00</p>
+                </div>
+                <p class="fw-semi-bold px-5 mx-5 text-light">Save $551.00</p>
+            </div>
+            <div class="d-flex flex-column align-items-start p-5 mb-5 mt-3">
+                <ul class="list-unstyled d-flex flex-column gap-3">
+                    <li class="fs-5 fw-bold">Pros:</li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Cross-Platform Availability
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> User-Friendly Admin Panel
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Easy-to-Use Admin Panel
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Support for Bugs
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Quick Uploads
+                    </li>
+
+                    <li class="fs-5 fw-bold">Cons:</li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-red.png"
+                                                  alt=""> No Image Uploads
+                    </li>
+                </ul>
+                <button onclick="location.href='{{ url_for('enquiry') }}'"
+                        class="price-button fs-5 p-3 bgcolor2 text-light mt-5  position-absolute rounded-5 border-0">
+                    Start Building Your App Today
+                </button>
+            </div>
+        </div>
+        <!-- PRICE 3 -->
+        <div class="pricing-border bg-light  position-relative pt-5 mt-5 w-100 h-auto rounded-4">
+            <div class="pricing-hat position-absolute start-color pt-4">
+                <p class="text-light mx-5 fs-5 fw-semi-bold text-center">Pro App Package</p>
+                <div class="text-light d-flex justify-content-center gap-4">
+                    <p class=" text-decoration-line-through fw-semi-bold">$1500.00</p>
+                    <p class=" fw-semi-bold">$899.00</p>
+                </div>
+                <p class="fw-semi-bold px-5 mx-5 text-light">Save $601.00</p>
+            </div>
+            <div class="d-flex flex-column align-items-start p-5 mb-5 mt-3">
+                <ul class="list-unstyled d-flex flex-column gap-3 mb-5 ">
+                    <li class="fs-5 fw-bold">Pros:</li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Comprehensive Features
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Custom Requests
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Tailored Exam Practice
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Full Policy and Guideline Support
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> App Store Optimization
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> Extensive Question Uploads
+                    </li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-green.png"
+                                                  alt=""> One-Time Front-End Revision
+                    </li>
+                    <li class="fs-5 fw-bold">Cons:</li>
+                    <li class="fw-semi-bold"><img class="me-2" src="/../static/img/landing-page-images/Icon-red.png"
+                                                  alt=""> Slower Content Upload Speed
+                    </li>
+                </ul>
+                <button onclick="location.href='{{ url_for('enquiry') }}'"
+                        class="price-button fs-5 p-3 start-color text-light mt-5  position-absolute rounded-5 border-0">
+                    Start Building Your App Today
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4 -->
+<section class="h-auto w-100 section4-bg mt-5">
+    <div class="container d-flex justify-content-between flex-wrap">
+        <div class="text-light col-12 col-lg-4 section4-inner-txt-margin">
+            <p class="fs-1 fw-bold">Essential Motif:</p>
+            <p class="fw-semi-bold">The essential motif encapsulates the narrative's foundational
+                concept, driving the core ideas and shaping the story's thematic framework.</p>
+            <button onclick="location.href='{{ url_for('enquiry') }}'"
+                    class="px-3 py-2 text-light fs-6  bg-transparent border-light border-1 rounded-3" style="">
+                Explore Now
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black"
+                     class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="text-light d-flex flex-column mt-5 gap-5">
+            <div class="d-flex flex-wrap justify-content-center gap-5">
+                <div>
+                    <img src="/../static/img/landing-page-images/img1.png" alt="" class="w-100">
+                    <p class="fw-semi-bold mt-2">Innovation and Customizations</p>
+                </div>
+                <div>
+                    <img src="/../static/img/landing-page-images/img2.png" alt="" class="w-100">
+                    <p class="fw-semi-bold mt-2">User-friendly Interface</p>
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center gap-5">
+                <div>
+                    <img src="/../static/img/landing-page-images/img3.png" alt="" class="w-100">
+                    <p class="fw-semi-bold mt-2">Professionalism and Trusted</p>
+                </div>
+                <div>
+                    <img src="/../static/img/landing-page-images/img4.png" alt="" class="w-100">
+                    <p class="fw-semi-bold mt-2">Educational and Empowering</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5 -->
+<section class="h-auto w-100 section5-bg mt-5">
+    <div class="d-flex flex-column align-items-center">
+        <div class="d-flex justify-content-between">
+            <div class="d-none d-lg-block mt-5">
+                <img src="/../static/img/landing-page-images/left1.png" alt="">
+            </div>
+            <div class="pt-5 mt-5 w-100">
+                <p class="fs-2 fw-bold text-light text-center">Why Choose Us for Your Healthcare App Development</p>
+                <p class="text-light text-center col-12 fw-semi-bold">Experience the epitome of refined living at Lorem
+                    Ipsum Ullamcorper. Discover meticulously crafted homes that redefine luxury, nestled in serene
+                    surroundings that soothe the soul. </p>
+
+            </div>
+            <div class="d-none d-lg-block mt-5">
+                <img src="/../static/img/landing-page-images/right1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex flex-column gap-3 pt-4 flex-wrap overflow-hidden ">
+        <!-- Row 1 -->
+        <div class="d-flex justify-content-center justify-content-lg-between flex-column flex-lg-row gap-5 overflow-hidden">
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">1</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">Real Expertise, Real Results</p>
+                    </div>
+                </div>
+
+                <p class="text-center fw-light section5-p pb-3">Our seasoned developers craft your
+                    app with a personal<br> touch that AI can't match.</p>
+
+            </div>
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">2</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">Seamless Regulatory Navigation</p>
+                    </div>
+                </div>
+                <p class="text-center fw-light section5-p pb-3">With us, the complex web of
+                    healthcare regulations<br> becomes a walk in the park, ensuring your app meets all<br> necessary
+                    compliance standards.</p>
+            </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="d-flex justify-content-center justify-content-lg-between flex-column flex-lg-row gap-5 overflow-hidden">
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">3</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">Affordable Excellence</p>
+                    </div>
+                </div>
+
+                <p class="text-center fw-light section5-p pb-3">Get top-tier app development
+                    without the top-tier price tag. Quality doesn't have to break the bank.</p>
+
+            </div>
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">4</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">Bespoke Customization</p>
+                    </div>
+                </div>
+                <p class="text-center fw-light section5-p pb-3">Your app, your vision – tailored
+                    to the unique needs of your healthcare audience.</p>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="d-flex justify-content-center justify-content-lg-between flex-column flex-lg-row gap-5 overflow-hidden">
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">5</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">End-to-End Support</p>
+                    </div>
+                </div>
+
+                <p class="text-center fw-light section5-p pb-3">From initial concept to
+                    post-launch, we're with you every step of the way, ensuring a smooth journey and peace of mind.</p>
+
+            </div>
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">6</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">Quicker Turnaround</p>
+                    </div>
+                </div>
+                <p class="text-center fw-light section5-p pb-3">Launch your app swiftly with our
+                    efficient development process that cuts through delays.</p>
+            </div>
+        </div>
+        <!-- Row 4 -->
+        <div class="d-flex justify-content-center justify-content-lg-between flex-column flex-lg-row gap-5 overflow-hidden">
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">7</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">Educational Impact</p>
+                    </div>
+                </div>
+
+                <p class="text-center fw-light section5-p pb-3">Make a difference in healthcare with an app that
+                    educates, engages, and empowers. </p>
+
+            </div>
+            <div class="col-md-5 col-sm-12 d-flex flex-column gap-3 card-outer-bg border-set  border-set1 overflow-hidden">
+                <div class="d-flex justify-content-between text-light">
+                    <div class="rounded-circle d-flex justify-content-center align-items-center cards-bg fw-semi-bold">
+                        <p class="fs-3 px-5 pt-4 pb-3">8</p>
+                    </div>
+                    <div class="d-flex cards-bg fw-semi-bold border-set cards-clip align-items-center px-4">
+                        <p class="fs-4 text-center px-4">Transparent Collaboration</p>
+                    </div>
+                </div>
+                <p class="text-center fw-light section5-p pb-3">No hidden costs, no surprises – just a clear path to
+                    your app's success.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 6 -->
+<section class="mt-5">
+
+    <div class="container d-flex align-items-center flex-column gap-3">
+        <p class="color2 text-center fw-bold fs-1">We Can Customize You Are To Your Needs</p>
+        <p class="color2 text-center fw-bold fs-2">Through The App Been Created</p>
+        <img src="/../static/img/landing-page-images/Frame 2683.png" alt="">
+    </div>
+
+    <div class="container">
+        <p class="fw-bold fs-2">Success Story:</p>
+
+        <div class=" d-flex gap-5">
+            <div class="d-flex flex-column col-lg-3">
+                <div class="success-container rounded-2">
+                    <span class="text-decoration-none d-flex align-items-center justify-content-between"
+                          data-reviewer="Sophiya Garner"><p
+                            class="fs-5 text-dark p-2">Sophiya Garner</p><img class="ms-5"
+                                                                              src="/../static/img/landing-page-images/Icon2.png"
+                                                                              alt="" id="hover-image">
+                    </span>
+                </div>
+                <div class="success-container rounded-2">
+                    <span class="text-decoration-none d-flex align-items-center justify-content-between"
+                          data-reviewer="James Harry"><p
+                            class="fs-5 text-dark p-2">James Harry</p><img class="ms-5"
+                                                                           src="/../static/img/landing-page-images/Icon2.png"
+                                                                           alt="" id="hover-image">
+                    </span>
+                </div>
+                <div class="success-container rounded-2">
+                    <span class="text-decoration-none d-flex align-items-center justify-content-between"
+                          data-reviewer="Ellis Edward"><p
+                            class="fs-5 text-dark p-2">Ellis Edward</p><img class="ms-5"
+                                                                            src="/../static/img/landing-page-images/Icon2.png"
+                                                                            alt="" id="hover-image">
+                    </span>
+                </div>
+                <div class="success-container rounded-2">
+                    <span class="text-decoration-none d-flex align-items-center justify-content-between"
+                          data-reviewer="George Williams"><p
+                            class="fs-5 text-dark p-2">George Williams</p><img class="ms-5"
+                                                                               src="/../static/img/landing-page-images/Icon2.png"
+                                                                               alt="" id="hover-image">
+                    </span>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 mt-3">
+                <div class="review-content border rounded p-3" data-review-by="Sophiya Garner">
+                    <p class="fs-5">This platform made creating my medical education app a breeze! The interface is
+                        incredibly user-friendly, and I was able to launch my app without any coding knowledge. Highly
+                        recommend it to all my colleagues.</p>
+                </div>
+                <div class="review-content d-none border rounded p-3" data-review-by="James Harry">
+                    <p class="fs-5">I saved so much time and money using this software. The pre-built templates are
+                        fantastic, and the support team is very responsive. It's a game-changer for medical
+                        education.</p>
+                </div>
+                <div class="review-content d-none border rounded p-3" data-review-by="Ellis Edward">
+                    <p class="fs-5">I was skeptical at first, but this tool exceeded my expectations. My app was up and
+                        running in no time, and my students love it. It's a must-have for any medical educator.</p>
+                </div>
+                <div class="review-content d-none border rounded p-3" data-review-by="George Williams">
+                    <p class="fs-5">Creating an app seemed daunting, but this platform made it simple and affordable.
+                        The step-by-step process was clear, and I didn't need any technical skills. Absolutely
+                        brilliant!</p>
+                </div>
+            </div>
+            <img class="d-none d-lg-block col-3 w-auto ms-5" src="/../static/img/landing-page-images/story doctor.png"
+                 alt="">
+        </div>
+    </div>
+</section>
+
+<!-- Section 7 bottom -->
+<section class="bottom-div mt-5 pt-5">
+
+    <div class="container mt-5 d-flex justify-content-between flex-wrap">
+        <div class="text-light d-flex flex-column gap-5">
+            <div class="d-flex gap-5">
+                <div class="d-flex flex-column gap-3">
+                    <p class="fs-5 fw-semi-bold">Services</p>
+                    <a class="text-decoration-none text-light" href="">Payment request</a>
+                    <a class="text-decoration-none text-light" href="">Create Projects</a>
+                    <a class="text-decoration-none text-light" href="">Customer Support</a>
+                    <a class="text-decoration-none text-light" href="">Connectivity</a>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                    <p class="fs-5 fw-semi-bold">Healthcare</p>
+                    <a class="text-decoration-none text-light" href="">About us</a>
+                    <a class="text-decoration-none text-light" href="">Contact us</a>
+                    <a class="text-decoration-none text-light" href="">Client Login</a>
+                    <a class="text-decoration-none text-light" href="">Admin Panel</a>
+                </div>
+            </div>
+            <div class=""><p><img src="/../static/img/landing-page-images/copyright.png" alt=""> 2023 Healthcare. All
+                rights reserved</p></div>
+        </div>
+
+        <div class="d-flex align-items-end flex-wrap">
+            <div>
+                <p class="text-light text-end me-5 pe-5">Follow Us:</p>
+                <div class="d-flex justify-content-end gap-3">
+                    <img src="/../static/img/landing-page-images/codicon_github-alt (1).png" alt="">
+                    <img src="/../static/img/landing-page-images/instagram.png" alt="">
+                    <img src="/../static/img/landing-page-images/twitter x.png" alt="">
+                    <img src="/../static/img/landing-page-images/facebook.png" alt="">
+                    <img src="/../static/img/landing-page-images/linkdin.png" alt="">
+                </div>
+                <div class="d-flex justify-content-between gap-5 pt-5 pb-3">
+                    <a class="text-decoration-none text-light" href="">Terms of Services</a>
+                    <a class="text-decoration-none text-light" href="">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/../static/js/navigation.js"></script>
+<script>
+    const successContainer = document.querySelector('.success-container');
+    document.querySelectorAll('.success-container').forEach((container) => {
+        const img = container.querySelector('img');
+        //const originalSrc = img.src; // Store the original image source
+
+        container.addEventListener('mouseover', () => {
+            container.style.background = 'rgba(17, 199, 204, 1)';
+            container.style.padding = '0 20px';
+            img.src = '/../static/img/landing-page-images/Icon3.png'; // Change the image source on hover
+        });
+
+        container.addEventListener('mouseout', () => {
+            container.style.background = 'transparent';
+            container.style.padding = '0 0';
+            img.src = '/../static/img/landing-page-images/Icon2.png'; // Change back to the original image source on mouseout
+        });
+    });
+
+</script>
+<script>
+    function toggleText() {
+        var shortText = document.querySelector('.short-text');
+        var fullText = document.querySelector('.full-text');
+
+        shortText.style.display = 'none';
+        fullText.style.display = 'block';
+    }
+</script>
+
+<script>
+    const elements = document.querySelectorAll('[data-reviewer]');
+    elements.forEach(element => {
+        element.addEventListener('click', () => {
+            const reviewer = element.getAttribute('data-reviewer');
+            const reviews = document.querySelectorAll('[data-review-by]');
+
+            reviews.forEach(review => {
+                if (review.getAttribute('data-review-by') === reviewer) {
+                    review.classList.remove('d-none');
+                } else {
+                    review.classList.add('d-none');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
